@@ -2,7 +2,7 @@ from math import ceil
 import pandas as pd
 import pyam
 
-from crisk2.connections.limits_connection import LimitsConnection
+from climate_risk_calc.connections.limits_connection import LimitsConnection
 
 
 def get_base_sector(variable):

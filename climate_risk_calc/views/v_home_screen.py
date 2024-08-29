@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
-import crisk2.views.v_scenario_explorer as scenario_explorer
-import crisk2.views.v_data_explorer as data_explorer
-from crisk2 import controller
+import climate_risk_calc.views.v_scenario_explorer as scenario_explorer
+import climate_risk_calc.views.v_data_explorer as data_explorer
+from climate_risk_calc import controller
 
 
 class HomeScreen(tk.Frame):

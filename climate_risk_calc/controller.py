@@ -1,9 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-
-from crisk2.views.v_data_explorer import DataExplorer
-from crisk2.views.v_home_screen import HomeScreen
-from crisk2.views.v_scenario_explorer import ScenarioExplorer
+from climate_risk_calc.views.v_home_screen import HomeScreen
 
 
 def start_view():

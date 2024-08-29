@@ -1,15 +1,14 @@
 import tkinter as tk
-from tkinter import ttk
 from tkinter import messagebox
+from tkinter import ttk
+
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from pandastable import Table
 
-import crisk2.tools.graph_designer
-from crisk2 import controller
-from crisk2.connections.iiasa_connection import IIASAConnection
-from crisk2.connections.limits_connection import LimitsConnection
-import crisk2.views.v_home_screen as home_screen
+from climate_risk_calc import controller
+from climate_risk_calc.connections.iiasa_connection import IIASAConnection
+from climate_risk_calc.connections.limits_connection import LimitsConnection
 
 font = "Arial 9"
 

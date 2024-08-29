@@ -1,17 +1,13 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.filedialog import askopenfilename
-
 import pandas as pd
 from matplotlib import pyplot as plt
 from matplotlib.backends._backend_tk import NavigationToolbar2Tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from pandastable import Table
-
-import crisk2.tools.calculator
-import crisk2.tools.graph_designer
-from crisk2 import controller
-from crisk2.connections.limits_connection import LimitsConnection
+from climate_risk_calc import controller
+from climate_risk_calc.connections.limits_connection import LimitsConnection
 
 
 class ScenarioExplorer(tk.Frame):
