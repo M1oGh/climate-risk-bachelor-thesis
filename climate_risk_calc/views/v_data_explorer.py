@@ -1,11 +1,12 @@
 import tkinter as tk
+import climate_risk_calc
 from tkinter import messagebox
 from tkinter import ttk
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from pandastable import Table
-
+import climate_risk_calc.tools.graph_designer
 from climate_risk_calc import controller
 from climate_risk_calc.connections.iiasa_connection import IIASAConnection
 from climate_risk_calc.connections.limits_connection import LimitsConnection
@@ -260,7 +261,7 @@ class DataExplorer(tk.Frame):
             )
             navigation_toolbar.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
             title = model_ + ", " + scenario_ + ", " + regions_ + ", " + variable_
-            crisk2.tools.graph_designer.simple_graph(df, ax, title, "solid")
+            climate_risk_calc.tools.graph_designer.simple_graph(df, ax, title, "solid")
             canvas.draw()
             self.graph_screen.tkraise()
             self.graph_screen.tkraise()

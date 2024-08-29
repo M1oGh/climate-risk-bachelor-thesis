@@ -7,6 +7,8 @@ from matplotlib.backends._backend_tk import NavigationToolbar2Tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from pandastable import Table
 from climate_risk_calc import controller
+import climate_risk_calc.tools.graph_designer
+import climate_risk_calc.tools.calculator
 from climate_risk_calc.connections.limits_connection import LimitsConnection
 
 
@@ -297,8 +299,8 @@ class ScenarioExplorer(tk.Frame):
             region=self.cbox_region.get(),
             variable=variables,
         )
-        market_shares = crisk2.tools.calculator.get_market_shares(dataframe)
-        crisk2.tools.graph_designer.graph_market_shares(
+        market_shares = climate_risk_calc.tools.calculator.get_market_shares(dataframe)
+        climate_risk_calc.tools.graph_designer.graph_market_shares(
             market_shares, ax, self.cbox_variable.get()
         )
         canvas.draw()
@@ -328,10 +330,10 @@ class ScenarioExplorer(tk.Frame):
             region=self.cbox_region.get(),
             variable=variables,
         )
-        market_shares = crisk2.tools.calculator.get_market_shares(dataframe)
-        market_shocks = crisk2.tools.calculator.get_market_share_shocks(dataframe)
+        market_shares = climate_risk_calc.tools.calculator.get_market_shares(dataframe)
+        market_shocks = climate_risk_calc.tools.calculator.get_market_share_shocks(dataframe)
 
-        crisk2.tools.graph_designer.graph_market_shocks(
+        climate_risk_calc.tools.graph_designer.graph_market_shocks(
             market_shares, market_shocks, self.cbox_scenario.get().split(","), ax, ax2
         )
 
@@ -342,7 +344,7 @@ class ScenarioExplorer(tk.Frame):
         if top:
             # save top shocks after calculating once
             if self.top_shock_df is None:
-                df = crisk2.tools.calculator.get_top_shocks(
+                df = climate_risk_calc.tools.calculator.get_top_shocks(
                     year=year,
                     file_name=self.full_file_name,
                     recovery_rate=rr,
@@ -363,7 +365,7 @@ class ScenarioExplorer(tk.Frame):
             else:
                 df = self.top_shock_df
         else:
-            df = crisk2.tools.calculator.get_shocks(
+            df = climate_risk_calc.tools.calculator.get_shocks(
                 model=model,
                 ref_scenario=ref_scenario,
                 recovery_rate=rr,
