@@ -1,8 +1,5 @@
 from matplotlib import pyplot as plt
 
-def hi():
-    print("hi")
-
 
 def graph_market_shocks(ms, ms_shocks, scenarios, axis1, axis2):
     """
